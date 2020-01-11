@@ -19,6 +19,9 @@ export class ApiService {
 
     getPhotos(datas): Observable<Photo> {
         this.tags += datas.search;
-        return this.http.get<Photo>(this.link + this.key + this.tags);
+        this.min_upload_date += '';
+        this.max_upload_date += '';
+        this.safe_search += '';
+        return this.http.get<Photo>(this.link + this.key + this.tags + this.min_upload_date + this.max_upload_date + this.safe_search);
     }
 }
