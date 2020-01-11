@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
 <div class="container mt-2">
-
-    <app-searchbar></app-searchbar>
-    <app-imagelist></app-imagelist>
+    <app-searchbar (search)="formSubmited($event)"></app-searchbar>
+    <app-imagelist [photos]="photos"></app-imagelist>
 </div>

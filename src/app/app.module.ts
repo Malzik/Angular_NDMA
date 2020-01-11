@@ -9,6 +9,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ImagelistComponent } from './Components/imagelist/imagelist.component';
 import { ImageComponent } from './Components/image/image.component';
+import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     imports: [
         BrowserModule,
         AppRoutingModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(appRoutes),
         HttpClientModule
     ],

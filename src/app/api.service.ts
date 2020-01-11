@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
 import {Photo} from './photo';
 
 @Injectable({
@@ -18,7 +17,7 @@ export class ApiService {
 
     constructor(private http: HttpClient) { }
 
-    getPhotos(datas): Observable<Photo> {
+    getPhotos(datas) {
         this.tags = '&tags=' + datas.search;
         this.minUploadDate += '&min_upload_date=' + datas.date_min;
         this.maxUploadDate += '&max_upload_date=' + datas.date_max;

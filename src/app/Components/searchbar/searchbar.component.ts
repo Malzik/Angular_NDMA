@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-searchbar',
@@ -7,12 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchbarComponent implements OnInit {
 
-  constructor() { }
+    @Output() search = new EventEmitter<string>();
+    searchForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) {
+      this.searchForm = this.formBuilder.group({
+          search: '',
+          date_min: '',
+          date_max: '',
+          safe_search: false
+      });
+  }
 
   ngOnInit() {
   }
 
-    show_filter() {
+  onSubmit(search) {
+      this.search.emit(search);
+  }
 
-    }
 }

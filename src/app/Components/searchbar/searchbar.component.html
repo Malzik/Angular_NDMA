@@ -1,8 +1,8 @@
-<form id="search_form">
+<form id="search_form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" id="text" name="text" required placeholder="Mot clé">
+        <input type="text" class="form-control" id="text" formControlName="search" required placeholder="Mot clé">
         <div class="input-group-append">
-            <input type="submit" class="btn btn-secondary">
+            <button type="submit" class="btn btn-secondary">Rechercher</button>
         </div>
         <div (click)="status=!status">
             <button type="button" class="btn">Afficher les filtres
@@ -12,21 +12,17 @@
     </div>
     <div class="border" id="filter" [ngClass]="status ? '' : 'd-none'">
         <div class="form-inline m-2">
-            <label class="form-check-label" for="points">Taille de l'image</label>
-            <div class="form-check form-check-inline">
-                <input type="range" class="form-control-range mb-2" name="points" min="0" max="10">
+            <div class="form-check form-inline">
+                <label class="form-check-label">Date minimum de l'image</label>
+                <input class="form-control mb-2" type="date" formControlName="date_min" value="">
             </div>
             <div class="form-check form-inline">
-                <label class="form-check-label" for="">Date minimum de l'image</label>
-                <input class="form-control mb-2" type="date" id="date_min" value="">
-            </div>
-            <div class="form-check form-inline">
-                <label class="form-check-label" for="">Date maximum de l'image</label>
-                <input class="form-control mb-2" type="date" id="date_max" value="">
+                <label class="form-check-label">Date maximum de l'image</label>
+                <input class="form-control mb-2" type="date" formControlName="date_max" value="">
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label" for="safe_search">Recherche NSFW</label>
-                <input class="form-check-input mb-2" type="checkbox" id="safe_search">
+                <label class="form-check-label">Recherche NSFW</label>
+                <input class="form-check-input ml-2 mb-2" type="checkbox" formControlName="safe_search">
             </div>
         </div>
     </div>
