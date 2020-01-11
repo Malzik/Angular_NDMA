@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterComponent } from './router.component';
 import {RouterModule, Routes} from '@angular/router';
-import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ImagelistComponent } from './Components/imagelist/imagelist.component';
 import { ImageComponent } from './Components/image/image.component';
@@ -21,7 +20,6 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent,
         RouterComponent,
-        NavbarComponent,
         SearchbarComponent,
         ImagelistComponent,
         ImageComponent
