@@ -14,6 +14,7 @@ export class ApiService {
     private min_upload_date = '&min_upload_date=';
     private max_upload_date = '&max_upload_date=';
     private safe_search = '&safe_search=';
+    private end = '&format=json&nojsoncallback=1';
 
     constructor(private http: HttpClient) { }
 
@@ -22,6 +23,6 @@ export class ApiService {
         this.min_upload_date += '';
         this.max_upload_date += '';
         this.safe_search += '';
-        return this.http.get<Photo>(this.link + this.key + this.tags + this.min_upload_date + this.max_upload_date + this.safe_search);
+        return this.http.get<Photo>(this.link + this.key + this.tags + this.min_upload_date + this.max_upload_date + this.safe_search + this.end);
     }
 }
