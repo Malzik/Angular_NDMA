@@ -9,6 +9,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ImagelistComponent } from './Components/imagelist/imagelist.component';
 import { ImageComponent } from './Components/image/image.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
     { path: '', component: AppComponent},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     imports: [
         BrowserModule,
         AppRoutingModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
