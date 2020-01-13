@@ -18,7 +18,7 @@ export interface SearchForm {
 export class AppComponent {
     title = 'NDMA';
     private searchDatas: SearchForm;
-    private photos: Array;
+    private photos: Array<any>;
 
     constructor(private apiService: ApiService) {}
 
